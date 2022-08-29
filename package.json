@@ -1,0 +1,17 @@
+{
+  "name": "phys-site",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Alexander Andryushin, Egor Koshelev",
+  "license": "All Rights Reserved",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "phys-engine": "mlntcandy/phys-engine"
+  }
+}

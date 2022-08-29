@@ -1,0 +1,8 @@
+[
+    {"name": "Главная", "href": ""},
+    {"name": "Трение", "href": "a/friction"}, 
+    {"name": "Упругость", "href": "a/elasticity"},
+    {"name": "Виды энергии", "href": "a/energy-types"},
+    {"name": "Фазовые переходы", "href": "a/fazperehod"}, 
+    {"name": "Тесты", "href": "tests"}
+]

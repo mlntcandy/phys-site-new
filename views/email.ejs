@@ -1,0 +1,55 @@
+<style type="text/css">
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Arial, sans-serif;
+    }
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-v0hj{background-color:#efefef;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+    .tg .tg-pnhd{background-color:#9aff99;border-color:inherit;color:#036400;font-weight:bold;text-align:center;vertical-align:top}
+    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-hnil{background-color:#ffccc9;border-color:inherit;color:#fe0000;font-weight:bold;text-align:center;vertical-align:top}
+    .tg .tg-f8tv{border-color:inherit;font-style:italic;text-align:left;vertical-align:top}
+    .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+    .tg .tg-uog8{border-color:inherit;text-align:left;text-decoration:underline;vertical-align:top}
+</style>
+<h2>Сайт по физике</h2>
+<h3>Тест: <a href="https://fizika.mlntcandy.com<%= data.testname %>"><%= data.testtitle %></a></h3>
+<h4>Ответы: <%= data.email.name %> <b>(<%= data.email.group %>)</b></h4>
+<table class="tg" style="table-layout: fixed; width: 494px">
+    <colgroup>
+    <col style="width: 39px">
+    <col style="width: 161px">
+    <col style="width: 143px">
+    <col style="width: 112px">
+    <col style="width: 39px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-v0hj">№</th>
+        <th class="tg-v0hj">Вопрос</th>
+        <th class="tg-v0hj">Правильный ответ</th>
+        <th class="tg-v0hj">Ответ ученика</th>
+        <th class="tg-v0hj">?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (ans in data.questions) { %> 
+        <% ans = data.questions[ans] %> 
+        <tr>
+          <td class="tg-c3ow"><%= ans.num %></td>
+          <td class="tg-f8tv"><%= ans.question %></td>
+          <td class="tg-0pky"><%= ans.right %></td>
+          <td class="tg-uog8"><%= ans.answer %></td>
+          <% if (ans.isRight) { %> 
+            <td class="tg-pnhd">+</td>
+          <% } else { %> 
+            <td class="tg-hnil">-</td>
+          <% } %> 
+        </tr>
+      <% } %> 
+    </tbody>
+</table>
+<h3>Правильных ответов - <%= data.result.r %> из <%= data.result.o %> (<%= Math.floor(data.result.r/data.result.o*1000)/10 %>%)</h3>

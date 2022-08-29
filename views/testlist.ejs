@@ -1,0 +1,7 @@
+<h1>Тесты</h1>
+<% for (let test in tests) { %>
+    <a class="testent" href="/tests/<%= test %>">
+        <h3><%= tests[test].test.name %></h3>
+        <p><%= tests[test].test.about %></p>
+    </a>
+<% } %>

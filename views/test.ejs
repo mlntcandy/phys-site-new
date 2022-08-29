@@ -1,0 +1,38 @@
+<script src="/test.js"></script>
+<div class="onetest">
+    <h1><%= test.name %></h1>
+    <h3><%= test.about %></h3>
+    <hr>
+    <% for (i in test.questions) { %>
+        <% var q = test.questions[i] %>
+        <div class="testq" question="<%= i %>" q_type="<%= q.type %>">    
+            <h4 class="questnum">Вопрос <%= i - 0 + 1 %></h4>
+            <h2><%= q.title %></h1>
+            <% if (q.img) { %> 
+                <img src="<%= q.img %> "></img><br>
+            <% } %>
+            <% switch (q.type) {
+                case "test_o":
+                    for (ans in q.opts) { %>
+                        <input type="radio" name="q<%= i %>" value="<%= ans %>">
+                        <label><%= q.opts[ans] %></label>
+                        <br>
+                    <% }
+                break;
+                case "test_m":
+                    for (ans in q.opts) { %>
+                        <input type="checkbox" name="q<%= i %>" value="<%= ans %>">
+                        <label><%= q.opts[ans] %></label>
+                        <br>
+                    <% }
+                break;
+                case "text": %>
+                    <input type="text" name="q<%= i %>" placeholder="Ответ">
+                <% break;
+            } %>
+        </div>
+        <hr>
+    <% } %>
+</div>
+<button id="submitButton" onclick="submitButton()">Отправить</button>
+<h2 id="loadingField"></h2>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@200;400;600&family=Source+Sans+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js"></script>
+  <title><%= content.title ? content.title + " – " : "" %>Физика</title>
+</head>
+<body>
+  <div id="sitewrapper">
+    <div id="menuButton" onclick="toggleMenu()"></div>
+    <div class="left_menu" status="closed">
+      <img class="logo" src="/img/PhysLogo.svg"></img>
+      <h3 class="menu_title">Физика</h3>
+      <ul class="menu1">
+        <% for (m of menu) { %>
+          <a href='/<%= m.href %>' class="buttonNav<% if (addr == ('/' + m.href)) { %><%= ' selected' %><% } %>"><li class="li1"><%= m.name %></li></a>
+        <% } %>
+      </ul>
+    </div>
+    <div class="right">
+      
+      <div id="testoverlay">
+        <div id="popup">
+          
+        </div>
+      </div>
+      <div id="content">
+        <%- content.cont %>
+      </div>
+    </div>
+  </div>
+       
+</body>
+</html>

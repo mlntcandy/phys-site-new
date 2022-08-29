@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@200;400;600&family=Source+Sans+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js"></script>
+  <title>Физика</title>
+</head>
+<body>
+  <div id="sitewrapper">
+    <div class="left_menu">
+      <header class='header'></header>
+      <h3 class="menu_title">Физика</h3>
+      <ul class="menu1">
+        <% for (m of menu) { %>
+          <a href='/<%= m.href %>' class="buttonNav<% if (addr == ('/' + m.href)) { %><%= ' selected' %><% } %>"><li class="li1"><%= m.name %></li></a>
+        <% } %>
+      </ul>
+    </div>
+    <div class="right">
+      <div id="content">
+        <div class="testent">
+          <h3>Test 1</h3>
+          <p>About this test</p>
+          <a href="tests/friction">Go to test</a>
+        </div>
+      </div>
+    </div>
+  </div>
+       
+</body>
+</html>
